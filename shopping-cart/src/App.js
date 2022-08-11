@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home';
 import Cart from './components/Cart';
 
@@ -9,12 +9,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <div>
-        <Route path='/' exact>
-          <Home />
-        </Route>
-        <Route path='/cart' exact>
-          <Cart />
-        </Route>
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/cart' exact element={<Cart />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
